@@ -8,3 +8,13 @@ func Sum(numbers []int) int {
 	}
 	return sum
 }
+
+// SumAll takes a varying number of slices, returning a new slice containing the totals for each slice passed in
+func SumAll(numbersToSum ...[]int) []int {
+	var sums []int
+	for _, numbers := range numbersToSum {
+		sums = append(sums, Sum(numbers))
+	}
+
+	return sums
+}
