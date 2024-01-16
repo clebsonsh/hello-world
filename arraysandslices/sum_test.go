@@ -1,6 +1,9 @@
 package arraysandslices
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestSum(t *testing.T) {
 	t.Run("collection of 5 numbers", func(t *testing.T) {
@@ -23,4 +26,11 @@ func TestSum(t *testing.T) {
 			t.Errorf("got %d want %d given, %v", got, want, numbers) // %v prints the value in a default format
 		}
 	})
+}
+
+func ExampleSum() {
+	numbers := []int{1, 2, 3, 4, 5}
+	sum := Sum(numbers)
+	fmt.Println(sum)
+	// Output: 15
 }
