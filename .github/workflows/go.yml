@@ -18,8 +18,7 @@ jobs:
     - uses: actions/setup-go@v4
       with:
         go-version: '1.23'
-        cache-dependency-path: |
-            hello-world/go.sum
+        cache: false
 
     - name: Test hello-world Module
       run: |
