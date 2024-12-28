@@ -23,3 +23,7 @@ func (w *Wallet) Withdraw(amount Bitcoin) error {
 	w.balance -= amount
 	return nil
 }
+
+func (w *Wallet) Balance() Bitcoin {
+	return w.balance
+}
