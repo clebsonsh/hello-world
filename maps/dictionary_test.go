@@ -12,6 +12,15 @@ func TestSearch(t *testing.T) {
 		assertStrings(t, got, want)
 	})
 
+	t.Run("unknow word", func(t *testing.T) {
+		_, err := dictonary.Search("unknow")
+
+		if err == nil {
+			t.Fatal("expected to get an error.")
+		}
+
+		assertError(t, err, ErrNotFound)
+	})
 }
 func assertStrings(t testing.TB, got, want string) {
 	t.Helper()
