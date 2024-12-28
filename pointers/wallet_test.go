@@ -4,6 +4,16 @@ import (
 	"testing"
 )
 
+func TestWallet(t *testing.T) {
+	t.Run("deposit", func(t *testing.T) {
+		wallet := Wallet{}
+
+		wallet.Deposit(Bitcoin(10))
+
+		assertBalance(t, wallet, Bitcoin(10))
+	})
+}
+
 func assertBalance(t testing.TB, wallet Wallet, want Bitcoin) {
 	t.Helper()
 	got := wallet.Balance()
