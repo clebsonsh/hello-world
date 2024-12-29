@@ -1,4 +1,4 @@
-package interation
+package main
 
 import (
 	"strings"
